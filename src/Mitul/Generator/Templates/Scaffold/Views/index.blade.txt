@@ -2,31 +2,32 @@
 
 @section('content')
 
-    <div class="container">
+<h1 class="page-header head">$MODEL_NAME$</h1>
 
-        @include('flash::message')
+<p> 
+    <div class="btn-group">  
+        <a class="btn btn-md btn-primary" href="{{ route('$MODEL_NAME_PLURAL_CAMEL$.create') }}"><i class="fa fa-plus-circle"></i> Tambah $MODEL_NAME$</a>
+    </div>
+</p>
 
-        <div class="row">
-            <h1 class="pull-left">$MODEL_NAME_PLURAL$</h1>
-            <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('$MODEL_NAME_PLURAL_CAMEL$.create') !!}">Add New</a>
-        </div>
-
-        <div class="row">
+<div class="row">
+    <div class="col-sm-6">
+       
             @if($$MODEL_NAME_PLURAL_CAMEL$->isEmpty())
-                <div class="well text-center">No $MODEL_NAME_PLURAL$ found.</div>
+                <div class="well text-center">Data $MODEL_NAME_PLURAL$ Tidak Ada.</div>
             @else
                 <table class="table">
                     <thead>
                     $FIELD_HEADERS$
-                    <th width="50px">Action</th>
+                    <th width="5%"><i class="fa fa-cogs"></i></th>
                     </thead>
                     <tbody>
                     @foreach($$MODEL_NAME_PLURAL_CAMEL$ as $$MODEL_NAME_CAMEL$)
                         <tr>
                             $FIELD_BODY$
                             <td>
-                                <a href="{!! route('$MODEL_NAME_PLURAL_CAMEL$.edit', [$$MODEL_NAME_CAMEL$->id]) !!}"><i class="glyphicon glyphicon-edit"></i></a>
-                                <a href="{!! route('$MODEL_NAME_PLURAL_CAMEL$.delete', [$$MODEL_NAME_CAMEL$->id]) !!}"><i class="glyphicon glyphicon-remove"></i></a>
+                                <a title="Edit" href="{{ route('$MODEL_NAME_PLURAL_CAMEL$.edit', array($$MODEL_NAME_CAMEL$->id))}}"><i class="fa fa-pencil"></i></a>                      
+                                <a title="Hapus" href="{{ route('$MODEL_NAME_PLURAL_CAMEL$.destroy', array($$MODEL_NAME_CAMEL$->id))}}" class="delete"><i class="fa  fa-trash-o"></i></a>                                             
                             </td>
                         </tr>
                     @endforeach

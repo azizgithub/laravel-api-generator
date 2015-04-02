@@ -1,14 +1,30 @@
 @extends('app')
 
 @section('content')
-<div class="container">
+<h1 class="page-header head">Edit $MODEL_NAME$</h1>
+<p> 
+    <div class="btn-group">  
+        <a class="btn btn-md btn-primary" href="{{ route('$MODEL_NAME_PLURAL_CAMEL$.index') }}"><i class="fa fa-list"></i> List $MODEL_NAME$</a>
+        <a class="btn btn-md btn-primary" href="{{ route('$MODEL_NAME_PLURAL_CAMEL$.create') }}"><i class="fa fa-plus-circle"></i> Tambah $MODEL_NAME$</a>
+        <a class="btn btn-md btn-primary" href="{{ route('$MODEL_NAME_PLURAL_CAMEL$.show', $$MODEL_NAME_CAMEL$->id) }}"><i class="fa fa-eye"></i> Detail $MODEL_NAME$</a>
+    </div>
+</p>
 
-    @include('common.errors')
+<div class="row">
+    <div class="col-sm-6">                          
+        <div class="panel panel-default">
+            <div class="panel-body">
 
-    {!! Form::model($$MODEL_NAME_CAMEL$, ['route' => ['$MODEL_NAME_PLURAL_CAMEL$.update', $$MODEL_NAME_CAMEL$->id], 'method' => 'patch']) !!}
 
-        @include('$MODEL_NAME_PLURAL_CAMEL$.fields')
+		    {!! Form::model($$MODEL_NAME_CAMEL$, ['route' => ['$MODEL_NAME_PLURAL_CAMEL$.update', $$MODEL_NAME_CAMEL$->id], 'method' => 'patch']) !!}
 
-    {!! Form::close() !!}
+		        @include('$MODEL_NAME_PLURAL_CAMEL$.fields')
+
+		    {!! Form::close() !!}
+
+			</div>
+		</div>
+	</div>
 </div>
-@endsection
+
+@stop

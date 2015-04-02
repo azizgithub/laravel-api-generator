@@ -1,22 +1,22 @@
 <?php namespace $NAMESPACE$;
 
-use Illuminate\Database\Eloquent\Model;
+use LaravelBook\Ardent\Ardent;
 
-class $MODEL_NAME$ extends Model
+class $MODEL_NAME$ extends Ardent
 {
 
-	public $table = "$TABLE_NAME$";
-
-	public $primaryKey = "id";
+	public $table = "$TABLE_NAME$";	
 
 	public $timestamps = true;
 
-	public $fillable = [
-	    $FIELDS$
-	];
+	protected $guarded = [];
 
 	public static $rules = [
 	    $RULES$
+	];
+
+	public static $customMessages = [
+	    'required' => 'Harus Diisi'
 	];
 
 }

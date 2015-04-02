@@ -1,14 +1,26 @@
 @extends('app')
 
 @section('content')
-<div class="container">
 
-    @include('common.errors')
+<h1 class="page-header head">Tambah $MODEL_NAME$</h1>
+<p> 
+    <div class="btn-group">  
+        <a class="btn btn-md btn-primary" href="{{ route('$MODEL_NAME_PLURAL_CAMEL$.index') }}"><i class="fa fa-list"></i> List $MODEL_NAME$</a>
+    </div>
+</p>
 
-    {!! Form::open(['route' => '$MODEL_NAME_PLURAL_CAMEL$.store']) !!}
+<div class="row">
+    <div class="col-sm-6">                          
+        <div class="panel panel-default">
+            <div class="panel-body">
 
-        @include('$MODEL_NAME_PLURAL_CAMEL$.fields')
+			    {!! Form::open(['route' => '$MODEL_NAME_PLURAL_CAMEL$.store']) !!}
 
-    {!! Form::close() !!}
+			        @include('$MODEL_NAME_PLURAL_CAMEL$.fields')
+
+			    {!! Form::close() !!}
+			</div>
+        </div>      
+    </div>      
 </div>
-@endsection
+@stop
