@@ -1,4 +1,4 @@
-Laravel API/Scaffold/CRUD Generator (Laravel5) by https://github.com/mitulgolakiya/laravel-api-generator
+Laravel API/Scaffold/CRUD Generator (Laravel5)
 =======================
 
 Steps to Get Started
@@ -13,3 +13,5 @@ Steps to Get Started
 2. Run composer update
 
         composer update
+
+3. Read the documentation in the author https://github.com/mitulgolakiya/laravel-api-generator
