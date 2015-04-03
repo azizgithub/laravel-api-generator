@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1 class="page-header head">Tambah $MODEL_NAME$</h1>
+<h1 class="page-header hzmt">Tambah $MODEL_NAME$</h1>
 <p> 
     <div class="btn-group">  
         <a class="btn btn-md btn-primary" href="{{ route('$MODEL_NAME_PLURAL_CAMEL$.index') }}"><i class="fa fa-list"></i> List $MODEL_NAME$</a>

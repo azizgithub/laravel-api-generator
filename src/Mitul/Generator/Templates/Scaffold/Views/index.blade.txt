@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1 class="page-header head">$MODEL_NAME$</h1>
+<h1 class="page-header hzmt">$MODEL_NAME$</h1>
 
 <p> 
     <div class="btn-group">  
@@ -16,7 +16,7 @@
             @if($$MODEL_NAME_PLURAL_CAMEL$->isEmpty())
                 <div class="well text-center">Data $MODEL_NAME_PLURAL$ Tidak Ada.</div>
             @else
-                <table class="table">
+                <table class="table table-bordered table-hover table-striped">
                     <thead>
                     $FIELD_HEADERS$
                     <th width="5%"><i class="fa fa-cogs"></i></th>
