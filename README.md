@@ -14,4 +14,6 @@ Steps to Get Started
 
         composer update
 
-3. Read the documentation in the author https://github.com/mitulgolakiya/laravel-api-generator
+3. Install dependency [aziz/smartmodel](https://github.com/azizgithub/ardent)
+
+4. Read the documentation in the author https://github.com/mitulgolakiya/laravel-api-generator
