@@ -14,7 +14,7 @@
         <div class="panel panel-default">
             <div class="panel-body">
 
-			    {!! Form::open(['route' => '$MODEL_NAME_PLURAL_CAMEL$.store']) !!}
+			    {!! Form::open(['route' => '$MODEL_NAME_PLURAL_CAMEL$.store', 'class' => 'form-horizontal']) !!}
 
 			        @include('$MODEL_NAME_PLURAL_CAMEL$.fields')
 
